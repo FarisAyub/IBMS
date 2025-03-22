@@ -1,0 +1,274 @@
+/* Changes the body style for all pages alt=#434a54*/
+body {
+	/*background: url(Images/backb.jpg);*/
+	width: 100%;
+	background-color: #171717;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+/* Changes the background of submission forms */
+.body-form {
+	background: url(Images/backg.jpg);
+	width: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+}
+/* Login page background and body design */
+.login-form {
+	background: url(Images/logback.jpg);
+	width: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+}
+/* Modifies the navigation bar border so that it isn't rounded also font */
+.navbar {
+	font-family: roboto condensed, Helvetica, sans-serif;
+	background-color: #101010 !important;
+	text-transform: uppercase;
+	font-weight: bold;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+/* Modifies the navigation bar button alt=#2d3238*/
+.nav-item {
+	border-radius: 10px;
+}
+/* Modifies the navigation bar button hover */
+.nav-item:hover {
+	background-color: #23272b;
+}
+/* Changes form input border to red when incorrect value */
+input:invalid:hover {
+	border-color: #DD2C00;
+}
+/* Changes form input border to green when correct value */
+input:valid:hover {
+    border-color: #0C0;
+}
+/* Style for submit button on forms */
+#sub {
+	background: #171717;
+	text-transform: uppercase;
+	color: #A0A0A0;
+	border-style: none;
+	height: 50px;
+	width: 100px;
+}
+/* Style change on hover over submit button */
+#sub:hover {
+	background: #2A2A2A;
+	color: #FFF;
+}
+/* Small text size for paragraph */
+p.small {
+	font-size: 10px;
+}
+/* Capitalise all text if this is used */
+.caps {
+	text-transform: uppercase;
+}
+/* Lowercase all text */
+.lowc {
+	text-transform: lowercase;
+}
+/* Change the cursor when this is used */
+.plain-cursor {
+	cursor: context-menu;	
+}
+/* Styling for button that uses image on policy add page */
+button.policy-add {
+	background-color: transparent;
+	border: none;
+}
+/* Styling for hovering over the add new policy button */
+.policy-add:hover {
+	background-color: #2b3035;
+}
+/* Empty button styling to remove button appearance for profile icons */
+.empty-button {
+	background: none; 
+	padding: 0; 
+	border: none;
+}
+/* Styling for hovering over a new profile icon */
+.empty-button:hover {
+	cursor: context-menu;
+	background-color:#EDEDED;
+}
+/* Custom card styling (for login) */
+.card-login {
+	position: fixed;
+	top: 30%;
+	left: 40%;
+	right: 40%;
+	width: 20%;
+	padding-left: 10px;
+	max-width: 40rem;
+	padding-right: 10px;
+	box-shadow: 0px 6px 8px rgba(0,0,0,0.5);
+}
+/* Custom card styling (for login) */
+.card-register {
+	position: fixed;
+	top: 10%;
+	left: 40%;
+	right: 40%;
+	width: 20%;
+	padding-left: 10px;
+	max-width: 40rem;
+	padding-right: 10px;
+	box-shadow: 0px 6px 8px rgba(0,0,0,0.5);
+}
+/* Small text for navigation bar */
+.sm-text {
+	font-size: 14px;
+}
+/* No padding for header */
+.no-pad {
+	left: 20%;
+	right: 20%;
+	width: 60%;
+	box-shadow: 0px 6px 8px rgba(0,0,0,0.5);
+}
+/* Profile button styling on nav */
+.nav-user {
+	min-height: 70px;
+}
+/* Card colours */
+/* Green */
+.card-green > .card-header {
+	background-color: #56b759;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+.card-green {
+    border-color: #56b759;
+	color: #fff;
+}
+/* Red */
+.card-red > .card-header {
+	background-color: #ff3048;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+.card-red {
+    border-color: #ff3048;
+	color: #fff;
+}
+/* Blue */
+.card-blue > .card-header {
+	background-color: #166efc;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+.card-blue {
+    border-color: #166efc;
+	color: #fff;
+}
+/* Dark card style */
+.card-dark > .card-header {
+}
+.card-dark {
+    border-color: #25292d;
+	color: #fff;
+	background-color: #25292d;
+}
+/* Dark card style version 2 */
+.card-dark-matt > .card-header {
+	background-color: #232425;
+}
+.card-dark-matt {
+    border-color: #1b1c1d;
+	color: #fff;
+	background-color: #1b1c1d;
+}
+/* Full card link */
+.card-full {
+	position: absolute;
+	top: 0; left: 0;
+	height: 100%; width: 100%;
+}
+/* Link with normal appearance */
+.link-normal {
+	color: white; 
+	text-decoration: none;
+}
+.link-normal:hover {
+	color: white; 
+	text-decoration: none;
+}
+/* Override bootstrap dropdown */
+.extendo {
+	width: 400px !important;  /* change the number to whatever that you need */
+}
+/* No text transformation */
+.no-text {
+	text-transform: none;
+}
+/* Center vertically */
+.center-v {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+/* Top image of card style */
+.embed-responsive .card-img-top {
+    object-fit: cover;
+}
+/* Zooms image instead of stretch */
+.zoom {
+    object-fit: cover;
+}
+/** Styling for hover over image **/
+/* Style for hover over image */
+.inner-image {
+ position: relative;
+ width: 100%;
+}
+/* Overlay text styling */
+.inner-image .text {
+ color: #fff;
+ font-size: 14px;
+ text-shadow: 2px 2px 2px #000;
+ text-align: center;
+ position: absolute;
+ padding-left: 5%;
+ padding-right: 5%;
+ width: 100%;
+}
+/* Text invisible by default */
+.inner-image .hover {
+ position: absolute;
+ top: 0;
+ height: 100%;
+ width: 100%;
+ opacity: 0;
+ transition: .5s ease;
+}
+/* Text visible when hovered */
+.inner-image:hover .hover {
+ opacity: 1;
+}
+/* Hover background colour */
+.inner-image .hover {
+ background-color: rgba(0,0,0,0.8);
+}
+/** Zoom on card image hover **/
+.fade-zoom {
+	overflow: hidden;
+}
+.fade-zoom img {
+	transition: all 0.5s ease;
+}
+.fade-zoom:hover img {
+	transform: scale(1.05);
+}
