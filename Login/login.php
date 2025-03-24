@@ -1,20 +1,31 @@
 <?php
-$ROOT = '../'; include $ROOT . 'nav.php';
-require('../connect.php');
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$ROOT = '../';
+include $ROOT . 'nav.php'; // Include navigation bar
+if ($_SERVER["REQUEST_METHOD"] == "POST") { // If form submitted
 	
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-	$query = "SELECT * FROM `FYP-Accounts` WHERE Username='$username' and Password='$password'"; 
+	$query = "SELECT * FROM `IBMS-Accounts` WHERE Username='$username' and Password='$password'"; 
 	$result = mysqli_query($connect, $query) or die(mysqli_error($connect));
 	$count = mysqli_num_rows($result);
 	$row = mysqli_fetch_array($result);
 	
-	if ($count == 1){
-		$_SESSION['level'] = $row['Access'];
-		$_SESSION['username'] = $username;
-		header("Refresh:0");
-
+	if ($count == 1){ // If account exists
+		$_SESSION['level'] = $row['Access']; // Set to admin or user
+        $_SESSION['username'] = $username; // Session variable
+        $checkPreferences = "SELECT * FROM `IBMS-Preferences` WHERE Username='$username'";
+        $checkResult = mysqli_query($connect, $checkPreferences) or die(mysqli_error($connect));
+        $checkRow = mysqli_num_rows($checkResult);
+        if ($checkRow == 1) { // Set preferences session variable
+            $_SESSION['preferences'] = 'Set'; 
+        } else {
+            $_SESSION['preferences'] = 'Not';
+        }
+        if ($_SESSION['preferences'] == 'Set') { // If set preferences before
+            header("refresh:3;url='../Profile/profile.php'"); // Go to profile 
+        } else { // If not 
+            header("refresh:3;url='../Profile/preferences.php'"); // Go to set preferences
+        }
 	} else {
 		
 		$error = "Invalid username or password";
@@ -22,7 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 
 }
-if(!isset($_SESSION['username'])){ 
+
+if(!isset($_SESSION['username'])) { // If not logged in
 ?>
 <!doctype html>
 <html lang="en">
@@ -40,7 +52,7 @@ if(!isset($_SESSION['username'])){
     <form action="" method="POST">
     <fieldset>
     	<?php 
-		if (isset($error)) {
+		if (isset($error)) { // If form submit fails display error in alert
 			echo '<div class="alert alert-danger alert-dismissible">';
 			echo '<button type="button" class="close" data-dismiss="alert">&times;</button>';
 			echo '<Strong>Error! </Strong>' . $error;
@@ -69,7 +81,7 @@ if(!isset($_SESSION['username'])){
 
 </html>
 <?php
-} else { 
+} else { // If already logged in
 	echo 
 	"<br>
     <div class='card mx-auto' style='max-width: 30rem;'>
@@ -79,7 +91,6 @@ if(!isset($_SESSION['username'])){
 	Redirecting in 3 seconds...<br>
 	</div>
 	</div>
-	</div>";
-	header("refresh:3;url='../Profile/preferences.php'");
+    </div>";
 }
 ?>

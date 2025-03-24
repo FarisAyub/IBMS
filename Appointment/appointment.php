@@ -1,19 +1,21 @@
 <?php
-$ROOT = '../'; include $ROOT . 'nav.php';
-require('../connect.php');
-if(isset($_SESSION['username'])){
-	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+$ROOT = '../'; include $ROOT . 'nav.php'; // Load navigation bar
+require('../connect.php'); // Include the connection file
+if(isset($_SESSION['username'])){ // If logged in
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') { // If form submitted
 			
-		$username = $_SESSION['username'];
+		// Form variables
+		$username = $_SESSION['username']; 
 		$message = $_POST['message'];
 		
-		$sql = "INSERT INTO `FYP-Appointments`
+		// SQL statement
+		$sql = "INSERT INTO `IBMS-Appointments`
 		(`Username`, `Message`, `Status`) VALUES 
 		('$username', '$message', 'Pending')"; 
 			
-		if (mysqli_query($connect,$sql)) {
+		if (mysqli_query($connect,$sql)) { // If sql runs
 			// Select email of user requesting appointment
-			$sql2 = "SELECT `Email` FROM `FYP-Accounts` WHERE Username='".$username."'";
+			$sql2 = "SELECT `Email` FROM `IBMS-Accounts` WHERE Username='".$username."'";
 			$result = mysqli_query($connect, $sql2);
 			$row = mysqli_fetch_assoc($result);
 			$email = $row['Email'];
@@ -37,11 +39,14 @@ if(isset($_SESSION['username'])){
 			$done = "Appointment requested!";
 			
 		} else {
-			
+			echo mysqli_error($connect);
 			$error = "Error requesting appointment";
 			
 		}
-	} 
+    } 
+    if (isset($done)) { // If appointment requested send page transition
+        header("refresh:3;url='../Profile/profile.php'");
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -58,35 +63,31 @@ if(isset($_SESSION['username'])){
 <br>
 <div class="card mx-auto" style="max-width: 25rem;">
 <div class="card-header">
-	<a href='../index.php'><i class="fas fa-chevron-left"></i>&nbsp;Back</a>
+	<a href='../index.php'><i class="fas fa-chevron-left"></i>&nbsp;Back</a> <!-- Go back -->
 </div>
 <div class="card-body">	
 <form action="" method="POST">
     <fieldset>
 		<?php 
-		if (isset($error)) {
+		if (isset($error)) { // If error display in an alert
             echo '<div class="alert alert-danger alert-dismissible">';
             echo '<button type="button" class="close" data-dismiss="alert">&times;</button>';
             echo '<Strong>Error! </Strong>' . $error;
             echo '</div>';
         }
-		// If the appointment successful display below
-		if (isset($done)) {
+		if (isset($done)) { // If no error display in an alert and redirect
 			echo '<div class="alert alert-success alert-dismissible">';
 			echo '<button type="button" class="close" data-dismiss="alert">&times;</button>';
 			echo '<Strong>Successs! </Strong>' . $done;
 			echo '</div>';
-			echo "<p>Redirecting to profile in 3 seconds...</p>";
-			header("refresh:3;url='../Profile/profile.php'");
-		} else { // If appointment not successfully submitted display below
+		} else { // If an appointment aint been subbmited
         ?>
         <h1 class="card-title text-center">APPOINTMENT</h1>
         <p class="card-text text-center">Request an appointment with an insurance advisor.</p>
         <!--- Message --->
         <div class="form-group">
-            <textarea id="2" type="text" name="message" class="form-control" maxlength="255" placeholder="Message..." autocomplete="off" required title="Enter a message"></textarea>
+            <textarea id="2" type="text" name="message" class="form-control" maxlength="80" placeholder="Leave a message (max 80 characters)..." autocomplete="off" required title="Enter a message"></textarea>
         </div>
-        <br>
         <div class="card text-center">	
         <input class="btn btn-primary" type="submit" value="Submit">
         </div>
@@ -103,7 +104,7 @@ if(isset($_SESSION['username'])){
 
 </html>
 <?php
-} else { 
+} else { // If not logged in
 	echo 
 	"<div class='container'>
 	<br>

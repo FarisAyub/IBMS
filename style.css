@@ -1,6 +1,5 @@
 /* Changes the body style for all pages alt=#434a54*/
 body {
-	/*background: url(Images/backb.jpg);*/
 	width: 100%;
 	background-color: #171717;
 	-webkit-background-size: cover;
@@ -10,7 +9,7 @@ body {
 }
 /* Changes the background of submission forms */
 .body-form {
-	background: url(Images/backg.jpg);
+	background-image: url(Images/backg.jpg);
 	width: 100%;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -20,7 +19,7 @@ body {
 }
 /* Login page background and body design */
 .login-form {
-	background: url(Images/logback.jpg);
+	background-image: url(Images/logback.jpg);
 	width: 100%;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -34,9 +33,9 @@ body {
 	background-color: #101010 !important;
 	text-transform: uppercase;
 	font-weight: bold;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
 }
 /* Modifies the navigation bar button alt=#2d3238*/
 .nav-item {
@@ -52,7 +51,7 @@ input:invalid:hover {
 }
 /* Changes form input border to green when correct value */
 input:valid:hover {
-    border-color: #0C0;
+	border-color: #0C0;
 }
 /* Style for submit button on forms */
 #sub {
@@ -151,7 +150,7 @@ button.policy-add {
 	padding-right: 40px;
 }
 .card-green {
-    border-color: #56b759;
+	border-color: #56b759;
 	color: #fff;
 }
 /* Red */
@@ -161,7 +160,7 @@ button.policy-add {
 	padding-right: 40px;
 }
 .card-red {
-    border-color: #ff3048;
+	border-color: #ff3048;
 	color: #fff;
 }
 /* Blue */
@@ -171,14 +170,12 @@ button.policy-add {
 	padding-right: 40px;
 }
 .card-blue {
-    border-color: #166efc;
+	border-color: #166efc;
 	color: #fff;
 }
 /* Dark card style */
-.card-dark > .card-header {
-}
 .card-dark {
-    border-color: #25292d;
+	border-color: #25292d;
 	color: #fff;
 	background-color: #25292d;
 }
@@ -187,7 +184,7 @@ button.policy-add {
 	background-color: #232425;
 }
 .card-dark-matt {
-    border-color: #1b1c1d;
+	border-color: #1b1c1d;
 	color: #fff;
 	background-color: #1b1c1d;
 }
@@ -222,45 +219,45 @@ button.policy-add {
 }
 /* Top image of card style */
 .embed-responsive .card-img-top {
-    object-fit: cover;
+	object-fit: cover;
 }
 /* Zooms image instead of stretch */
 .zoom {
-    object-fit: cover;
+	object-fit: cover;
 }
 /** Styling for hover over image **/
 /* Style for hover over image */
 .inner-image {
- position: relative;
- width: 100%;
+	position: relative;
+	width: 100%;
 }
 /* Overlay text styling */
 .inner-image .text {
- color: #fff;
- font-size: 14px;
- text-shadow: 2px 2px 2px #000;
- text-align: center;
- position: absolute;
- padding-left: 5%;
- padding-right: 5%;
- width: 100%;
+	color: #fff;
+	font-size: 14px;
+	text-shadow: 2px 2px 2px #000;
+	text-align: center;
+	position: absolute;
+	padding-left: 5%;
+	padding-right: 5%;
+	width: 100%;
 }
 /* Text invisible by default */
 .inner-image .hover {
- position: absolute;
- top: 0;
- height: 100%;
- width: 100%;
- opacity: 0;
- transition: .5s ease;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
 }
 /* Text visible when hovered */
 .inner-image:hover .hover {
- opacity: 1;
+	opacity: 1;
 }
 /* Hover background colour */
 .inner-image .hover {
- background-color: rgba(0,0,0,0.8);
+	background-color: rgba(0,0,0,0.8);
 }
 /** Zoom on card image hover **/
 .fade-zoom {
