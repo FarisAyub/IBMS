@@ -3,21 +3,21 @@ This project is an Insurance Broker Management System that allows customers to b
 
 ## Setup
 
-#### 1. Clone the repository
+#### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/FarisAyub/IBMS.git
 ```
 
-#### 2. Set up the database
+#### 2. Set up the Database
 
 - Import the provided SQL file `ibms.sql` into your MySQL server
   
-#### 3. Configure the database
+#### 3. Configure the Database
 
 - Update database credentials if needed for administrator account (access level 2)
     
-#### 4. Run the application
+#### 4. Run the Application
 
 - Start your web server and navigate to the project's directory in your browser
 
@@ -25,7 +25,7 @@ git clone https://github.com/FarisAyub/IBMS.git
 
 - **Personalized Recommendations**: Suggests insurance policies based on user preferences, likes/dislikes, and ratings.
 - **User-Broker Interaction**: Enables customers to contact brokers for advice and filter policies based on selected preferences.
-- **Admin Dashboard**: Allows brokers to manage policies and site content via with a user-friendly interface, eliminating the need for direct database access or programming knowledge.
+- **Admin Dashboard**: Allows brokers to manage policies and site content via a user-friendly interface, eliminating the need for direct database access or programming knowledge.
 
 ## Tech Stack
 
@@ -49,6 +49,9 @@ git clone https://github.com/FarisAyub/IBMS.git
 
 ### Register Form:
 ![register](https://github.com/user-attachments/assets/3ece3b51-a0e1-4dc4-9409-50609cb9939a)
+
+## License
+This project is for educational purposes only and is not intended for commercial use.
 
 ## About
 Created By: Faris Ayub
