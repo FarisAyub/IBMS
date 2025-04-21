@@ -11,9 +11,13 @@ git clone https://github.com/FarisAyub/IBMS.git
 
 #### 2. Set up the database
 
-- Import the provided SQL file into your MySQL server
+- Import the provided SQL file `ibms.sql` into your MySQL server
   
-#### 3. Run the application
+#### 3. Configure the database
+
+- Update database credentials if needed for administrator account (access level 2)
+    
+#### 4. Run the application
 
 - Start your web server and navigate to the project's directory in your browser
 
